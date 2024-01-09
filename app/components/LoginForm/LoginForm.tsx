@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { response } from 'express';
+// import { response } from 'express';
 
 export default function LoginForm() {
   const [username, setusername] = useState("");
@@ -23,7 +23,7 @@ export default function LoginForm() {
         redirect: false,
       });
 
-      if (respo.error) {
+      if (respo !== undefined && respo.error) {
         setError("Invalid Credentials");
         return;
       }
