@@ -5,7 +5,7 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 // import { response } from 'express';
-
+import { SignInResponse } from 'next-auth/react';
 export default function LoginForm() {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
