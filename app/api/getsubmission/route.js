@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 
 export const GET = async () => {
   try {
-    await connectToDB();
+    // await connectToDB();
     const data = await Submission.find({});
     return NextResponse.json(data, { status: 200 });
 

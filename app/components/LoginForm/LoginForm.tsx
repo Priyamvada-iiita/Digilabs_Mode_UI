@@ -17,16 +17,19 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
-      const respo = await signIn("credentials", {
+      const respo: SignInResponse = await signIn("credentials", {
         username,
         password,
         redirect: false,
-      });
-
-      if (respo !== undefined && respo.error) {
+      }) ?? {}; // Provide an empty object as a default value
+      
+      // Check if there was an error during sign-in
+      if (respo?.error) {
+        // Handle the error
         setError("Invalid Credentials");
         return;
       }
+      
 
       router.replace("AdminPanel");
     } catch (error) {
