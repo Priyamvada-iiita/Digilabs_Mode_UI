@@ -6,11 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { CiCreditCardOff } from "react-icons/ci";
 import { MdAccountBalance } from "react-icons/md";
 import { CiCreditCard1 } from "react-icons/ci";
-
-
+import { useLogoContext } from '@/app/context/LogoContext';
+import { useTextContext } from '@/app/context/TextContext';
 const Navbars = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const { logoUrl, updateLogoUrl } = useLogoContext();
   useEffect(() => {
     // This code will only run on the client side
     const handleKeyPress = (e:KeyboardEvent) => {
@@ -56,12 +56,9 @@ const Navbars = () => {
             <nav className="mx-auto flex max-w-7xl items-center justify-between py-5 px-10 gap-2" aria-label="Global">
             <Container className='justify-between lg:px-4 gap-4'>
                 <Row className="flex lg:gap-40 space-x-8">
-                    <Image
-                    src="/Mode UI Logo.png"
-                    width={1000}
-                    height= {0.5}
-                    alt="Mode UI"
-                    />
+                   
+                    <img src={logoUrl}>
+                    </img>
                 <div className="hidden lg:mx-auto lg:flex lg:justify-center lg:space-x-2 lg:relative lg:gap-14">
             
                 <div className="relative">
