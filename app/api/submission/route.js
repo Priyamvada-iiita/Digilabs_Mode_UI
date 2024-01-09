@@ -4,7 +4,7 @@ import { Submission } from "@/app/lib/models";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 
-export async function POST(req: any) {
+export async function POST(req) {
   const {  email } = await req.json();
  
   try {

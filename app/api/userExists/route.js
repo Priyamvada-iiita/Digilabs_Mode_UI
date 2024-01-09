@@ -1,7 +1,7 @@
 import connectToDB from "@/app/lib/utils";
 import { NextResponse } from "next/server";
 import { AdminUser } from "@/app/lib/models";
-export async function POST(req:any) {
+export async function POST(req) {
   try {
     await connectToDB();
     const { username } = await req.json();

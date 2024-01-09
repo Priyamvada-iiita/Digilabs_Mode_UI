@@ -6,11 +6,7 @@ import mongoose from "mongoose";
 export const GET = async () => {
   try {
     await connectToDB();
-    const data = await Submission.find({}) as mongoose.Document<any, {}, {
-      createdAt: Date;
-      updatedAt: Date;
-      email: string;
-    }>[];
+    const data = await Submission.find({});
     return NextResponse.json(data, { status: 200 });
 
   } catch (error) {
